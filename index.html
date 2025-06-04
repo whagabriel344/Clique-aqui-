@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação de Idade</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container, #conteudo {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    button, a {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover, a:hover {
+      background-color: #0056b3;
+    }
+
+    .link-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .arrow {
+      font-size: 2rem;
+    }
+
+    #negado {
+      display: none;
+      text-align: center;
+    }
+
+    .figura {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tela de verificação -->
+  <div class="container" id="verificacao">
+    <img src="gg.jpg" alt="18+" class="figura">
+    <h1>Verificação de Idade</h1>
+    <p>Este conteúdo é destinado apenas a maiores de 18 anos.</p>
+    <button onclick="verificarIdade()">Tenho 18 anos ou mais</button>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="conteudo">
+    <h1>Bem Vindo</h1>
+    <div class="link-container">
+      <span class="arrow">➡️</span>
+      <a href="https://chat.whatsapp.com/L7wFHc3JLwD8F1CYKEUr6e">Clique Aqui</a>
+      <span class="arrow">⬅️</span>
+    </div>
+    <br>
+    <!-- Altere o href para a próxima etapa real -->
+  </div>
+
+  <!-- Mensagem de acesso negado -->
+  <div id="negado">
+    <h2>Acesso negado</h2>
+    <p>Este conteúdo é permitido apenas para maiores de 18 anos.</p>
+  </div>
+
+  <script>
+    window.onload = function () {
+      document.getElementById("verificacao").style.display = "flex";
+    }
+
+    function verificarIdade() {
+      const maiorDeIdade = confirm("Você confirma que tem 18 anos ou mais?");
+      if (maiorDeIdade) {
+        document.getElementById("verificacao").style.display = "none";
+        document.getElementById("conteudo").style.display = "flex";
+      } else {
+        document.getElementById("verificacao").style.display = "none";
+        document.getElementById("negado").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
